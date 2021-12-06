@@ -9,38 +9,48 @@
     justify-content: center;
     margin: 15px;
 }
+.card:hover{
+    box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+    border: 1px solid white;
+}
 
 .card img{
     width: 150px;
     height: 100px;
+    object-fit: cover;
     border-radius: 10%;
     filter: grayscale(60%);
-    background-size: cover;
-    
 }
 .card img:hover{
-    width: 150px;
-    height: 100px;
-    border-radius: 10%;
     filter: grayscale(0%);
 }
 
 .cardTitle{
     text-decoration: none;
-    color: black;
+    color: #e8e8e8;
 }
 
 .cardSubtitle{
-    color: black;
+    color: #e8e8e8;
     text-decoration: none;
 }
 
 .cardTitle:hover{
-    text-decoration: none;
-    color: tomato;
+    text-shadow:6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;;
 }
 
 .cardSubtitle:hover{
-    color: tomato;
-    text-decoration: none;
+    text-shadow:6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+}
+
+.population{
+    color: #e8e8e8;
+}
+
+.population:hover{
+    text-shadow:6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
 }

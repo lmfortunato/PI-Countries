@@ -1,0 +1,32 @@
+.paginate{
+    display: flex;
+    flex-direction: row;
+}
+
+.number{
+    list-style: none;
+}
+
+.btnPaginate{
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #090909;
+    padding: 08px;
+    margin: 02px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 45px;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    /* box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff; */
+    cursor: pointer;
+}
+
+.btnPaginate:hover{
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+    border: 1px solid white;
+}

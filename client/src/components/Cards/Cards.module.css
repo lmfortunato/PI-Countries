@@ -1,0 +1,19 @@
+.cards{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.loading{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}

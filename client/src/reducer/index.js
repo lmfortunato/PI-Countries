@@ -1,8 +1,8 @@
-import { bindActionCreators } from "redux";
-import {GET_COUNTRIES, FILTER_CONTINENT, FILTER_ACTIVITY, GET_ACTIVITIES, ORDER_BY_NAME, ORDER_BY_POPULATION, GET_NAME_COUNTRIES} from "../actions/index";
+import {GET_COUNTRIES, FILTER_CONTINENT, FILTER_ACTIVITY, GET_ACTIVITIES, ORDER_BY_NAME, ORDER_BY_POPULATION, GET_NAME_COUNTRIES, POST_ACTIVITY, GET_COUNTRY_DETAIL} from "../actions/index";
 
 const initialState = {
     countriesLoaded : [],
+    detail:[],
     allCountries:[],
     allActivities: []
 }
@@ -16,10 +16,20 @@ function rootReducer (state = initialState, {type, payload}) {
                 countriesLoaded: payload,
                 allCountries: payload
             }
+        case GET_COUNTRY_DETAIL:
+            return{
+                ...state,
+                detail:payload
+            }
         case GET_ACTIVITIES:
             return{
                 ...state,
                 allActivities:payload
+            }
+
+        case POST_ACTIVITY:
+            return{
+                ...state,
             }
 
         case GET_NAME_COUNTRIES:
@@ -86,11 +96,22 @@ function rootReducer (state = initialState, {type, payload}) {
                 countriesLoaded : statusFiltered
             }
         case FILTER_ACTIVITY:
+            console.log("payload", payload)
             const countriesAll = state.allCountries
-            const filterActivity = countriesAll.filter(el => el.name)
+            let stateActivity = [];
+            for(let element of countriesAll){
+                if(element.activities.length !== 0){
+                    for(let el of element.activities){
+                        if(el.name === payload){
+                            stateActivity = [...stateActivity, element]
+                        }
+                    }
+                }
+            }
+            console.log("stateactivity", stateActivity)
             return {
                 ...state,
-                allCountries: filterActivity
+                countriesLoaded: stateActivity
             }
         default:
             return state;

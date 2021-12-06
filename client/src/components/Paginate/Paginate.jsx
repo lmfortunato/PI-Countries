@@ -1,5 +1,5 @@
 import React from "react";
-import "./Paginate.css";
+import Styles from "./Paginate.module.css";
 
 export default function Paginate ({countriesPerPage, countriesLoaded, paginate}){ //me traigo las props del otro componente
     const pageNumbers = []; // declaro arreglo vacio 
@@ -10,10 +10,10 @@ export default function Paginate ({countriesPerPage, countriesLoaded, paginate})
 
     return(
         <nav>
-            <ul className="paginate">
+            <ul className={Styles.paginate}>
                 {pageNumbers && pageNumbers.map(number => (
-                    <li className="number" key={number}>
-                        <button onClick={() => paginate(number)}>{number}</button>
+                    <li className={Styles.number} key={number}>
+                        <button className={Styles.btnPaginate} onClick={() => paginate(number)}>{number}</button>
                     </li>
                 ))}
             </ul>

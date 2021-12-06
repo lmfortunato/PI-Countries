@@ -1,12 +1,14 @@
 import axios from "axios";
 
 export const GET_COUNTRIES = "GET_COUNTRIES"
+export const GET_COUNTRY_DETAIL = "GET_COUNTRY_DETAIL"
 export const GET_ACTIVITIES = "GET_ACTIVITIES"
 export const GET_NAME_COUNTRIES = "GET_NAME_COUNTRIES"
 export const ORDER_BY_NAME = "ORDER_BY_NAME"
 export const ORDER_BY_POPULATION = "ORDER_BY_POPULATION"
 export const FILTER_CONTINENT = "FILTER_CONTINENT"
 export const FILTER_ACTIVITY = "FILTER_ACTIVITY"
+export const POST_ACTIVITY = "POST_ACTIVITY"
 
 export function getCountries(){
     return async function(dispatch){
@@ -18,13 +20,34 @@ export function getCountries(){
     }
 }
 
+export function getCountryDetail(id){
+    return async function(dispatch){
+        const response = await axios.get(`http://localhost:3001/countries/${id}`)
+            return dispatch({
+                type: GET_COUNTRY_DETAIL,
+                payload: response.data
+            })
+        }
+}
+
 export function getActivities(){
     return async function(dispatch){
+        try{
         const response = await axios.get("http://localhost:3001/activity")
         dispatch({
             type: GET_ACTIVITIES,
             payload: response.data
         })
+        }catch(error){
+            console.log(error)
+        }
+    }
+}
+
+export function postActivity(payload){
+    return async function(dispatch){
+        const response = await axios.post("http://localhost:3001/activity", payload)
+        return response;
     }
 }
 
@@ -41,6 +64,7 @@ export function getNameCountries(name){
         }
     }
 }
+
 
 export function filterCountriesByContinent(payload){
     return {

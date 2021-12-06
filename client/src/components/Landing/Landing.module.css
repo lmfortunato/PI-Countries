@@ -1,0 +1,40 @@
+.landingPage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnEnter{
+    border: none;
+    width: 200px;
+    height: 50px;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    margin: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.btnEnter:hover{
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+    border: 1px solid white;
+}
+
+.title{
+    width: 70%;
+    padding-top: 30px;
+}
+
+.name{
+    width: 30%;
+    padding-bottom: 30px;
+}

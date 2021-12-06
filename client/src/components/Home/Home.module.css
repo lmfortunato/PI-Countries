@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    /* height: 100vh; */
+    box-sizing: border-box;
+        background-image: url("../julio-Recuperado2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+
+    /* .bg{
+        background-image: url("../istockphoto-944453634-170667a.jpg");        
+        background-repeat: no-repeat;
+        background-size: cover;
+    } */
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .header button{
+        border: none;
+        color: #090909;
+        padding: 0.7em 1.7em;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-radius: 0.5em;
+        background: #e8e8e8;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+        /* box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff; */
+        cursor: pointer;
+    }
+
+    .header button:hover{
+        box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+        border: 1px solid white;
+    }
+
+    
+    .filterContainer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .filters{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .paginate{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardsContainer{
+        width: 70vw;
+        
+    }

@@ -1,0 +1,68 @@
+.detailContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    align-self: flex-start;
+}
+
+.btnBack{
+    border: none;
+        color: #090909;
+        padding: 0.7em 1.7em;
+        margin: 30px;
+        font-size: 16px;
+        text-transform: uppercase;
+        border-radius: 0.5em;
+        background: #e8e8e8;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+        cursor: pointer;
+}
+
+.btnBack:hover{
+    box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+    border: 1px solid white;
+}
+
+.countryContainer{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+}
+
+.flag{
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.details{
+    font-size: 150%;
+    color: #e8e8e8;
+    
+}
+.activities{
+    font-size: 110%;
+    color: #e8e8e8;
+    
+}
+
+.activities h3{
+    text-transform: uppercase;
+}

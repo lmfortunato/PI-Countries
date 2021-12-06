@@ -1,8 +1,0 @@
-.paginate{
-    display: flex;
-    flex-direction: row;
-}
-
-.number{
-    list-style: none;
-}
