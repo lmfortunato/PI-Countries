@@ -16,13 +16,11 @@ import Logo from "../coollogo_com-322342168.png"
 export default function Home (){
     const dispatch = useDispatch();
     const countriesLoaded = useSelector((state) => state.countriesLoaded); //Es lo mismo que hacer el mapstatetoprops
-    // const activities = useSelector((state) => state.allActivities);
-    // console.log(activities)
     
     //PAGINADO
     const [currentPage, setCurrentPage] = useState(1); //Pagina actual
-    const [countriesPerPage, setCountriesPerPage] = useState(9); // Cuantos personajes por page
-    const [order, setOrder] = useState("")
+    const [countriesPerPage, setCountriesPerPage] = useState(9); // Cuantos paises por page
+    const [order, setOrder] = useState("")//estado para que el render actualice en home
     const indexOfLastCountry = currentPage * countriesPerPage; // 9
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage; // 0
     const currentCountries = countriesLoaded.slice(indexOfFirstCountry, indexOfLastCountry);

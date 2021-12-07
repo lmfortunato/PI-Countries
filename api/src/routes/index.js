@@ -28,6 +28,7 @@ const getCountries = async() => {
                 population: e.population
             };
         });
+        
         apiInfo.map(async (e) => {
             await Country.findOrCreate({
                 where: {
@@ -97,7 +98,7 @@ router.get("/countries/:idPais", async (req, res) => {
 router.post ('/activity', async (req, res) => {
     const {name, difficulty, duration, season, countries} = req.body;
     try {
-        const [activity, created] = await Activity.findOrCreate({
+        const [activity, created] = await Activity.findOrCreate({//el primero me da una tabla con los datos que le estoy pidiendo y el segundo es un booleano, si da false es porque ya estaba creado, y si da true es xq lo creo
             where: { name: name},
             defaults: {
                 name: name,
@@ -115,7 +116,7 @@ router.post ('/activity', async (req, res) => {
             });
 
             for (let value of paises) {
-            await value.addActivity(activity.dataValues.id);
+            await value.addActivity(activity.dataValues.id);//lleno la tabla intermedia, haciendo la relacion entre la actividad creada y
             } 
             res.json(activity);
         } 

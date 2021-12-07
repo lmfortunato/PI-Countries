@@ -8,7 +8,7 @@ import Title from "./coollogo_com-9342723.png"
 export default function Activity(){
 const dispatch = useDispatch();
 const history = useHistory();
-const countries = useSelector((state) => state.countriesLoaded)
+const countries = useSelector((state) => state.allCountries)
 
 const [input, setInput] = useState({
     name:"",
@@ -16,7 +16,6 @@ const [input, setInput] = useState({
     duration:"",
     season:["Fall", "Winter", "Spring", "Summer"],
     countries:[]
-
 })
 useEffect(() =>{
     dispatch(getActivities())
@@ -53,6 +52,7 @@ function handleSubmit(e){
 function handleDelete(el){
     setInput({
         ...input,
+        // countries: input.countries.filter(country => country !== el)
         countries: input.countries.filter(country => country !== el)
     })
 }

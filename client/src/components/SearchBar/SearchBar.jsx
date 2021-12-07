@@ -11,13 +11,14 @@ export default function SearchBar(){
     function handleInputChange (e){
         e.preventDefault();
         setName(e.target.value)
+        // dispatch(getNameCountries(name))
 
     }
 
     function handleSubmit(e){
         e.preventDefault();
         dispatch(getNameCountries(name)) //voy a ir guardando lo que esta tipeando el usaurio en mi estado local
-        
+        setName("")
     }
 
     return(

@@ -22,11 +22,14 @@ export function getCountries(){
 
 export function getCountryDetail(id){
     return async function(dispatch){
-        const response = await axios.get(`http://localhost:3001/countries/${id}`)
-            return dispatch({
+        return await fetch(`http://localhost:3001/countries/${id}`)
+        .then(response => response.json())
+        .then(json =>{
+            dispatch({
                 type: GET_COUNTRY_DETAIL,
-                payload: response.data
+                payload: json
             })
+        })
         }
 }
 
@@ -43,6 +46,8 @@ export function getActivities(){
         }
     }
 }
+
+
 
 export function postActivity(payload){
     return async function(dispatch){
@@ -65,6 +70,19 @@ export function getNameCountries(name){
     }
 }
 
+export function orderByName(payload){
+    return{
+        type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+export function orderByPopulation(payload){
+    return{
+        type: ORDER_BY_POPULATION,
+        payload
+    }
+}
 
 export function filterCountriesByContinent(payload){
     return {
@@ -80,16 +98,4 @@ export function filterActivity(payload){
     }
 }
 
-export function orderByName(payload){
-    return{
-        type: ORDER_BY_NAME,
-        payload
-    }
-}
 
-export function orderByPopulation(payload){
-    return{
-        type: ORDER_BY_POPULATION,
-        payload
-    }
-}

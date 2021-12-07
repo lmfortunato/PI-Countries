@@ -33,6 +33,7 @@ function rootReducer (state = initialState, {type, payload}) {
             }
 
         case GET_NAME_COUNTRIES:
+            console.log(payload)
             return{
                 ...state,
                 countriesLoaded: payload
@@ -41,21 +42,21 @@ function rootReducer (state = initialState, {type, payload}) {
             const orderByName = payload === "ascending"?
             state.countriesLoaded.sort(function(a,b){
                 if(a.name > b.name){
-                    return 1;
+                    return 1; //los invierte
                 }
                 if(b.name > a.name){
-                    return -1;
+                    return -1; //no invierte
                 }
                 return 0;
             }) :
             state.countriesLoaded.sort(function(a,b){
                 if(a.name > b.name){
-                    return -1;
+                    return -1; // no los intercambia
                 }
                 if(b.name > a.name){
-                    return 1;
+                    return 1; //los intercambia
                 }
-                return 0;
+                return 0; //no intercambia ==
             })
 
             return{
@@ -118,23 +119,6 @@ function rootReducer (state = initialState, {type, payload}) {
     }
 }
 
-{/* <option value="All">All</option>
-<option value="ecoTourism">Eco Tourism</option>
-<option value="festivals">Festivals</option>
-<option value="golf">Golf</option>
-<option value="bike">Mountain Bike</option>
-<option value="museum">Museum</option>
-<option value="rivers">Rivers</option>
-<option value="sky">Sky</option>
-<option value="nightclubs">Nightclubs</option>
-<option value="fishing">Fishing</option>
-<option value="pubs">Pubs</option>
-<option value="tours">Tours</option>
-<option value="diving">Diving</option>
-<option value="gastronomicTour">Gastronomic Tour</option>
-<option value="nationalParks">National Parks</option>
-<option value="thermalCenters">Thermal Centers</option>
-<option value="adventureTurism">Adventure Turism</option> */}
 
 
 export default rootReducer;
